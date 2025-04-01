@@ -11,3 +11,29 @@
     background-image: url(./assets/9268c0cc8846ee10e4390d204eb0f708.jpg);
     back;
 }
+header{
+    display: flex;
+    width: 100vw;
+    border-bottom: solid black 2px;
+    
+}
+
+.header-containt{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.containt-link{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    text-align: end;
+}
+
+a{
+    text-decoration: none;
+}
