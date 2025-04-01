@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-bg{
+    opacity: 0.6;
+}
+.bg{
+    height: 100vh;
+    background-image: url(./assets/9268c0cc8846ee10e4390d204eb0f708.jpg);
+    back;
+}
