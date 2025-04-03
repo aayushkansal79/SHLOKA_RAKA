@@ -256,33 +256,67 @@
 }
 
 .genre{
+    margin: 90px 0;
     width: 100vw;
     height: 70vh;
-    background-color: aqua;
 }
 .genre-content{
     display: flex;
     height: 100%;
-    width: 50%;
+    width: 70%;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
     margin: 0 auto;
-    background-color: bisque;
+    background-color: #FBF8F2;
 }
 
 .genre-title{
-    text-align: center;
+    font-size: 30px;
+    font-family: "Yatra One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    width: 100%;
 }
 
-.genre-type{
+.genre-types{
+    height: 75%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-    padding: 0 10px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    padding: 30px;
 }
 
 .gtype{
-    background-color: blueviolet;
-    size: 11%;
+    background-color: #e7cb8375;
+    size: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
+
+/* .gtype>p{
+    font-size: 30px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+} */
+
+.end{
+    width: 100%;
+    display: flex;
+}
+ .end img{
+    flex: 1;
+    min-width: 100%;
+ }
