@@ -5,9 +5,98 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script> -->
+    <div class="header-container">
+      <header class="header-content">
+          <nav class="nav-container">
+              <a href="#" class="link-content">होम</a>
+              <a href="#" class="link-content">कविता</a>
+              <a href="#" class="link-content">मेरी कविताएँ</a>
+          </nav>
+          <div class="searchbar-container">
+              <span class="search-icon">&#x1F50D;</span>
+              <input type="text" class="search-input" placeholder="खोज...">
+          </div>
+          <div class="button-container">
+              <button class="auth-button">लॉग इन</button>
+              <button class="auth-button">साइन अप</button>
+          </div>
+          
+      </header>
+      <div class="heading-container">
+        <div class="heading-content">
+          <img src="/src/assets/for_raka-removebg-preview.png" alt="" class="heading-logo">
+          <p class="heading">hindi</p>
+        </div>
+        
+    </div>
+  </div>
+  <main>
+    <div class="poemOfTheDay">
+      <div class="pod-content">
+        <div class="pod-heading">
+          <p>आज की कविता</p>
+        </div>
+        <div class="pod-desc">
+          <div class="left-box">
+            <p>  वंदना </p>
+            <p>हे मातृभूमि! तेरी गोद में पला हूँ मैं,  तेरे ही आँचल की छाँव में पला हूँ मैं।
+              तेरी ही मिट्टी से बना मेरा यह शरीर,  तेरी ही गाथा से सजा मेरा यह अधीर।
+              तेरी ही सेवा में सदा लीन रहूँगा मैं,  तेरी ही जय-गाथा सदा गाऊँगा मैं</p>
+            <div id="poetname"><p>(मुंशी प्रेमचंद)</p>
+            </div>
+            </div>
+          <div class="right-box">
+            <img src="/src/assets/munshi premchand.jpg" class="premchand">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="famous-poem">
+      <div class="fp-content">
+        <div class="fp-heading">
+          <p class="fp-title">प्रसिद्ध कविता</p>
+        </div>
+        <div class="fp-poems">
+          <div class="fpoem">
+            <p> माना कि बड़ा मगरूर हूँ मैं
+              छोटी सी बात का बड़ा कसूर हूँ मैं
+              अगर तुम्हारा नजरिया होता सच्चाई भरा
+              जान जाते कि फिर भी बेकसूर हूँ मैं।</p>
+          </div>
+          <div class="fpoem">
+            <p>मानता हूँ कि गलतियों का पुतला हूँ मैं,
+              नहीं कहता कि दूध का धुला हूँ मैं,
+              दाने की तलाश में निकला वो पंछी हूँ मैं,
+              जो ख्वाहिशों के लिए शिकार हो गया।</p>
+          </div>
+          <div class="fpoem">
+            <p>निर्णय लेने से पहले सोचते तो सही
+              कौन सही है, कौन गलत है, तोलते तो सही
+              शिकायत बिल्कुल भी नहीं होती आपसे अगर
+              आप कभी मेरे मन को टटोलते तो सही है।</p>
+          </div>
+          <div class="fpoem">
+            <p> जब चाहिए था आपका साथ, साथ तो देते
+              मांगा था जब आपका हाथ, हाथ तो देते
+              मंजिल की तलाश तो मैं अकेले ही कर लेता
+              आप मंजिल पाने के हालात तो देते।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
   </body>
 </html>

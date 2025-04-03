@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    text-decoration: none;
+}
+.header-container{
+  /* width: 100vw; */
+  height: 40vh;
+  background-image: url(/src/assets/background.jpg);
+  background-repeat: repeat-x;
+  /* display: flex;
+  justify-content: center; */
+  padding-top: 15px;
+
+}
+
+.header-content{
+    display: flex;
+    width: 95%;
+    height: 20%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-container{
+    display: flex;
+    /* width: 250px;
+    justify-content: space-between; */
+    gap: 25px;
+}
+.link-content{
+    color: rgb(62, 56, 56);
+    font-size: 19px;
+    font-family: "Yatra One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+.searchbar-container {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "Yatra One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.search-input {
+    background-color: #d99d0467;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    width: 500px; 
+
+}
+
+.search-icon {
+    padding: 10px;
+    color: #555;
+    cursor: pointer; 
+    background-color: #d99d0467;
+    height: 38px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    height: 70px;
+}
+
+.auth-button{
+    background-color: #d99d0467; 
+    /* background-color: transparent; */
+    color: black; 
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: "Yatra One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+    
+}
+
+/* .auth-button:hover{
+    background-color: ;
+
+} */
+
+.heading-container{
+    width: 100%;
+    height: 10vh;
+    margin-top: 20px;
+
+}
+
+.heading-content{
+    margin: 0 auto;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heading{
+   font-size: 50px;
+   font-weight: 400;
+}
+
+.heading-logo{
+    height: 50px;
+}
+
+.poemOfTheDay{
+    width: 100vw;
+    height: 50vh;
+    transform: translateY(-90px);
+}
+
+.pod-content{
+    display: flex;
+    flex-direction: column;
+    /* gap:2px; */
+    background-color: #FBF8F2;
+    margin: 0 auto;
+    height: 100%;
+    width: 50%;
+    padding-top: 15px;
+    border-radius: 10px;
+}
+
+.pod-heading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pod-heading p{
+    font-size: 25px;
+    font-family: "Yatra One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pod-desc{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    height: 100%;
+}
+
+.left-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    width: 40%;
+
+}
+
+.left-box p{
+    font-size: 20px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.right-box{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: end;
+}
+
+.premchand{
+    width: 80%;
+    height: 90%;
+    
+}
+
+#poetname{
+    display: flex;
+    justify-content: end;
+}
+#poetname p{
+    font-weight: 400;
+}
+
+.famous-poem{
+    width: 100vw;
+    height: 80vh;
+}
+
+.fp-content{
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    background-color: #FBF8F2;
+    border-radius: 10px;
+}
+
+.fp-heading{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fp-title{
+    font-size: 30px;
+    font-family: "Yatra One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fp-poems{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    height: 79%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.fpoem{
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    white-space: pre-line;
+    font-size: 20px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
