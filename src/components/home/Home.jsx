@@ -1,9 +1,34 @@
 import React from 'react';
 import './home.css';
 import { assets } from '../../assets/assets'
+import { useState, useEffect } from 'react';
 const Home = () => {
+
+    const [isVisible, setIsVisible] = useState(true);
+    const [startFadeOut, setStartFadeOut] = useState(false);
+
+    useEffect(() => {
+
+        const fadeOutTimer = setTimeout(() => {
+            setStartFadeOut(true);
+        }, 2000);
+
+        const removeSplashTimer = setTimeout(() => {
+            setIsVisible(false);
+            if (onFinish) onFinish();
+        }, 3000);
+
+        return () => {
+            clearTimeout(fadeOutTimer);
+            clearTimeout(removeSplashTimer);
+        };
+    }, []);
+
     return (
         <>
+            <div className={`splash-screen ${startFadeOut ? "hide-splash" : ""}`}>
+                <h1 className="shlok-text">काव्यधारा</h1>
+            </div>
             <div className="header-container">
                 <header className="header-content">
                     <nav className="nav-container">
@@ -23,7 +48,7 @@ const Home = () => {
                 <div className="heading-container">
                     <div className="heading-content">
                         <img src={assets.feather_icon} alt="Logo" className="heading-logo"/>
-                        <p className="heading">hindi</p>
+                        <p className="heading">काव्यधारा</p>
                     </div>
                 </div>
             </div>
@@ -110,7 +135,7 @@ const Home = () => {
                         <div className="comp-logo">
                             <a className="logo-link" href="#">
                                 <img className="logo-svg" src={assets.feather_icon} alt="Logo"/>
-                                StudySync
+                                काव्यधारा
                             </a>
                         </div>
                         <p className="filler-text">Seamless Learning for Brighter Futures.</p>
@@ -162,7 +187,7 @@ const Home = () => {
                     </div>
                 </footer>
                 <div className="footer-copyright">
-                    © 2021 - Present StudySync. All rights reserved.
+                    © 2025 - काव्यधारा. All rights reserved.
                 </div>
             </div>
         </>
