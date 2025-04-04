@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
     text-decoration: none;
+    color: black;
+}
+body{
+    background-color: white;
 }
 .header-container{
   /* width: 100vw; */
@@ -361,7 +368,8 @@
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    max-width: 1590px;
+    /* max-width: 1590px; */
+    width: 100%;
 }
 
 .footer{
