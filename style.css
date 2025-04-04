@@ -346,6 +346,14 @@
     font-style: normal;
 }
 
+
+.gtype:hover{
+    transform: scale(1.08);
+    box-shadow:0 4px 8px black;
+    border: 1px solid blue ;
+
+}
+
 .footer-container{
     /* background-color: rgba(128, 128, 128, 0.449); */
     background-image: url(/src/assets/background.jpg);
@@ -374,8 +382,8 @@
 }
 
 .logo-svg{
-    width: 2rem;
-    height: 6rem;
+    width: 3.5rem;
+    height: 4rem;
 }
 
 .comp-logo{
@@ -387,7 +395,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.8rem;
     font-size: 1.28rem;
     font-weight: bold;
     color: black;
@@ -415,7 +422,7 @@
 .footer-grid-heading{
     font-size: 1.05rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: black;
 }
 
 ul{
