@@ -173,10 +173,41 @@ body{
 .heading{
    font-size: 50px;
    font-weight: 400;
+   font-family: "Yatra One", system-ui;
 }
 
 .heading-logo{
     height: 50px;
+}
+
+.signup-title{
+    width: 100vw;
+    height: 20vh;
+    transform: translateY(-80px);
+}
+
+
+.red-box{
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url(/src/assets/footerpic.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    background-size: cover;
+
+}
+
+.title{
+    color: aliceblue;
+    font-family: "Yatra One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+
 }
 
 .poemOfTheDay{

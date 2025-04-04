@@ -2,8 +2,9 @@ import React from 'react';
 import './home.css';
 import { assets } from '../../assets/assets'
 import { useState, useEffect } from 'react';
-const Home = () => {
 
+const Home = () => {
+    const [signup, setSignup] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [startFadeOut, setStartFadeOut] = useState(false);
 
@@ -42,7 +43,7 @@ const Home = () => {
                     </div>
                     <div className="button-container">
                         <button className="auth-button">लॉग इन</button>
-                        <button className="auth-button">साइन अप</button>
+                        <button className="auth-button" onClick={() => setSignup(!signup)}>साइन अप</button>
                     </div>
                 </header>
                 <div className="heading-container">
@@ -52,82 +53,115 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                {signup ?
+                    <>
+                            <div className="signup-title">
+                            <div className="red-box">
+                                <p className='title'>
+                                जानकारी दर्ज करे
+                                </p>
+                            </div>
+                            </div> 
 
-            <div className="poemOfTheDay">
-                <div className="pod-content">
-                    <div className="pod-heading">
-                        <p>आज की कविता</p>
-                    </div>
-                    <div className="pod-desc">
-                        <div className="left-box">
-                            <p>वंदना</p>
-                            <p>हे मातृभूमि! तेरी गोद में पला हूँ मैं, तेरे ही आँचल की छाँव में पला हूँ मैं।
-                                तेरी ही मिट्टी से बना मेरा यह शरीर, तेरी ही गाथा से सजा मेरा यह अधीर।
-                                तेरी ही सेवा में सदा लीन रहूँगा मैं, तेरी ही जय-गाथा सदा गाऊँगा मैं</p>
-                            <div id="poetname"><p>(मुंशी प्रेमचंद)</p></div>
+                            <div className="form-container">
+                            <form className='form-content'>
+                                <div className="name-container">
+                                <label htmlFor="fullname">Full Name</label>
+                                <label htmlFor="phonenumber">Phone Number</label>
+                                <label htmlFor="city">City</label>
+                                <label htmlFor="username">Username</label>
+                                </div>
+                                <div className="inpboxleft">
+                                <input type="text" name="" id="fullname" />
+                                <input type="text" name="" id="phonenumber" />
+                                <input type="text" name="" id="city" />
+                                <input type="text" name="" id="" />
+                                </div>
+                            </form>
+                            </div>
+                    </>
+                  :
+                  <div>
+                        <div className="poemOfTheDay">
+                    <div className="pod-content">
+                        <div className="pod-heading">
+                            <p>आज की कविता</p>
                         </div>
-                        <div className="right-box">
-                            <img src={assets.munshi_icon} alt="Munshi Premchand" className="premchand"/>
+                        <div className="pod-desc">
+                            <div className="left-box">
+                                <p>वंदना</p>
+                                <p>हे मातृभूमि! तेरी गोद में पला हूँ मैं, तेरे ही आँचल की छाँव में पला हूँ मैं।
+                                    तेरी ही मिट्टी से बना मेरा यह शरीर, तेरी ही गाथा से सजा मेरा यह अधीर।
+                                    तेरी ही सेवा में सदा लीन रहूँगा मैं, तेरी ही जय-गाथा सदा गाऊँगा मैं</p>
+                                <div id="poetname"><p>(मुंशी प्रेमचंद)</p></div>
+                            </div>
+                            <div className="right-box">
+                                <img src={assets.munshi_icon} alt="Munshi Premchand" className="premchand"/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="famous-poem">
-                <div className="fp-content">
-                    <div className="fp-heading">
-                        <p className="fp-title">प्रसिद्ध कविता</p>
-                    </div>
-                    <div className="fp-poems">
-                        <div className="fpoem">
-                            <p>माना कि बड़ा मगरूर हूँ मैं
-                                छोटी सी बात का बड़ा कसूर हूँ मैं
-                                अगर तुम्हारा नजरिया होता सच्चाई भरा
-                                जान जाते कि फिर भी बेकसूर हूँ मैं।</p>
+                <div className="famous-poem">
+                    <div className="fp-content">
+                        <div className="fp-heading">
+                            <p className="fp-title">प्रसिद्ध कविता</p>
                         </div>
-                        <div className="fpoem">
-                            <p>मानता हूँ कि गलतियों का पुतला हूँ मैं,
-                                नहीं कहता कि दूध का धुला हूँ मैं,
-                                दाने की तलाश में निकला वो पंछी हूँ मैं,
-                                जो ख्वाहिशों के लिए शिकार हो गया।</p>
-                        </div>
-                        <div className="fpoem">
-                            <p>निर्णय लेने से पहले सोचते तो सही
-                                कौन सही है, कौन गलत है, तोलते तो सही
-                                शिकायत बिल्कुल भी नहीं होती आपसे अगर
-                                आप कभी मेरे मन को टटोलते तो सही है।</p>
-                        </div>
-                        <div className="fpoem">
-                            <p>जब चाहिए था आपका साथ, साथ तो देते
-                                मांगा था जब आपका हाथ, हाथ तो देते
-                                मंजिल की तलाश तो मैं अकेले ही कर लेता
-                                आप मंजिल पाने के हालात तो देते।</p>
+                        <div className="fp-poems">
+                            <div className="fpoem">
+                                <p>माना कि बड़ा मगरूर हूँ मैं
+                                    छोटी सी बात का बड़ा कसूर हूँ मैं
+                                    अगर तुम्हारा नजरिया होता सच्चाई भरा
+                                    जान जाते कि फिर भी बेकसूर हूँ मैं।</p>
+                            </div>
+                            <div className="fpoem">
+                                <p>मानता हूँ कि गलतियों का पुतला हूँ मैं,
+                                    नहीं कहता कि दूध का धुला हूँ मैं,
+                                    दाने की तलाश में निकला वो पंछी हूँ मैं,
+                                    जो ख्वाहिशों के लिए शिकार हो गया।</p>
+                            </div>
+                            <div className="fpoem">
+                                <p>निर्णय लेने से पहले सोचते तो सही
+                                    कौन सही है, कौन गलत है, तोलते तो सही
+                                    शिकायत बिल्कुल भी नहीं होती आपसे अगर
+                                    आप कभी मेरे मन को टटोलते तो सही है।</p>
+                            </div>
+                            <div className="fpoem">
+                                <p>जब चाहिए था आपका साथ, साथ तो देते
+                                    मांगा था जब आपका हाथ, हाथ तो देते
+                                    मंजिल की तलाश तो मैं अकेले ही कर लेता
+                                    आप मंजिल पाने के हालात तो देते।</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="writing-container">
-                <div className="button-content">
-                    <p className="button-p">अपनी कविता साझा कर</p>
-                </div>
-            </div>
-
-            <div className="genre">
-                <div className="genre-content">
-                    <div className="genre-title">
-                        <p>शैली</p>
-                    </div>
-                    <div className="genre-types">
-                        <div className="gtype">भक्ति</div>
-                        <div className="gtype">हास्य</div>
-                        <div className="gtype">देशभक्ति</div>
-                        <div className="gtype">प्रगतिवादी</div>
-                        <div className="gtype">साहित्यिक</div>
-                        <div className="gtype">छायावादी</div>
+                <div className="writing-container">
+                    <div className="button-content">
+                        <p className="button-p">अपनी कविता साझा कर</p>
                     </div>
                 </div>
+
+                <div className="genre">
+                    <div className="genre-content">
+                        <div className="genre-title">
+                            <p>शैली</p>
+                        </div>
+                        <div className="genre-types">
+                            <div className="gtype">भक्ति</div>
+                            <div className="gtype">हास्य</div>
+                            <div className="gtype">देशभक्ति</div>
+                            <div className="gtype">प्रगतिवादी</div>
+                            <div className="gtype">साहित्यिक</div>
+                            <div className="gtype">छायावादी</div>
+                        </div>
+                    </div>
+                </div>
+                  </div>
+                }
             </div>
+            
 
             <div className="footer-container">
                 <footer className="footer">
