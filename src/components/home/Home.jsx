@@ -7,6 +7,27 @@ const Home = () => {
     const [signup, setSignup] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [startFadeOut, setStartFadeOut] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        city: "",
+        address: "",
+        username: "",
+        password: "",
+        email: ""
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Submitted Data:", formData);
+    };
 
     useEffect(() => {
 
@@ -30,6 +51,20 @@ const Home = () => {
             <div className={`splash-screen ${startFadeOut ? "hide-splash" : ""}`}>
                 <h1 className="shlok-text">काव्यधारा</h1>
             </div>
+            {isOpen && <div className="modal-overlay" onClick={() => setIsOpen(false)}></div>}
+            {isOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close-btn" onClick={() => setIsOpen(false)}>&times;</span>
+                        <h2>LOGIN</h2>
+                        <label>Username</label>
+                        <input type="text" className="input-box" placeholder="Type Here" />
+                        <label>Password</label>
+                        <input type="password" className="input-box" placeholder="Type Here" />
+                        <button className="login-btn">Submit</button>
+                    </div>
+                </div>
+            )}
             <div className="header-container">
                 <header className="header-content">
                     <nav className="nav-container">
@@ -42,7 +77,7 @@ const Home = () => {
                         <input type="text" className="search-input" placeholder="खोज..."/>
                     </div>
                     <div className="button-container">
-                        <button className="auth-button">लॉग इन</button>
+                        <button className="auth-button" onClick={() => setIsOpen(true)}>लॉग इन</button>
                         <button className="auth-button" onClick={() => setSignup(!signup)}>साइन अप</button>
                     </div>
                 </header>
@@ -56,34 +91,40 @@ const Home = () => {
             <div>
                 {signup ?
                     <>
-                            <div className="signup-title">
-                            <div className="red-box">
-                                <p className='title'>
-                                जानकारी दर्ज करे
-                                </p>
-                            </div>
-                            </div> 
-
-                            <div className="form-container">
-                            <form className='form-content'>
-                                <div className="name-container">
-                                <label htmlFor="fullname">Full Name</label>
-                                <label htmlFor="phonenumber">Phone Number</label>
-                                <label htmlFor="city">City</label>
-                                <label htmlFor="username">Username</label>
-                                </div>
-                                <div className="inpboxleft">
-                                <input type="text" name="" id="fullname" />
-                                <input type="text" name="" id="phonenumber" />
-                                <input type="text" name="" id="city" />
-                                <input type="text" name="" id="" />
-                                </div>
-                            </form>
-                            </div>
+                            <div className="signup-container">
+            <h1 className="signup-title">साइन अप</h1>
+            <form className="signup-form" onSubmit={handleSubmit}>
+                <label>पहला नाम:</label>
+                <input type="text" name="firstName" onChange={handleChange} required />
+                
+                <label>अंतिम नाम:</label>
+                <input type="text" name="lastName" onChange={handleChange} required />
+                
+                <label>फोन नंबर:</label>
+                <input type="tel" name="phone" onChange={handleChange} required />
+                
+                <label>शहर:</label>
+                <input type="text" name="city" onChange={handleChange} required />
+                
+                <label>पता:</label>
+                <input type="text" name="address" onChange={handleChange} required />
+                
+                <label>उपयोगकर्ता नाम:</label>
+                <input type="text" name="username" onChange={handleChange} required />
+                
+                <label>पासवर्ड:</label>
+                <input type="password" name="password" onChange={handleChange} required />
+                
+                <label>ईमेल:</label>
+                <input type="email" name="email" onChange={handleChange} required />
+                
+                <button type="submit" className="signup-btn">रजिस्टर करें</button>
+            </form>
+        </div>
                     </>
                   :
                   <div>
-                        <div className="poemOfTheDay">
+                    <div className="poemOfTheDay">
                     <div className="pod-content">
                         <div className="pod-heading">
                             <p>आज की कविता</p>
@@ -168,61 +209,62 @@ const Home = () => {
                     <div className="footer-top">
                         <div className="comp-logo">
                             <a className="logo-link" href="#">
-                                <img className="logo-svg" src={assets.feather_icon} alt="Logo"/>
+                                <img className="logo-svg" src={assets.feather_icon} alt="Logo" />
                                 काव्यधारा
                             </a>
                         </div>
-                        <p className="filler-text">Seamless Learning for Brighter Futures.</p>
+                        <p className="filler-text">बाधारहित शिक्षा उज्जवल भविष्य के लिए।</p>
                         <div className="social">
                             <a className="social-link" href="#">
-                                <img src={assets.micro_icon} alt="Microsoft" className="social-icon"/>
+                                <img src={assets.micro_icon} alt="Microsoft" className="social-icon" />
                             </a>
                             <a className="social-link" href="#">
-                                <img src={assets.linkedin_icon} alt="LinkedIn" className="social-icon"/>
+                                <img src={assets.linkedin_icon} alt="LinkedIn" className="social-icon" />
                             </a>
                             <a className="social-link" href="#">
-                                <img src={assets.insta_icon} alt="Instagram" className="social-icon"/>
+                                <img src={assets.insta_icon} alt="Instagram" className="social-icon" />
                             </a>
                             <a className="social-link" href="#">
-                                <img src={assets.twitter_icon} alt="Twitter" className="social-icon"/>
+                                <img src={assets.twitter_icon} alt="Twitter" className="social-icon" />
                             </a>
                         </div>
                     </div>
 
                     <div className="footer-grid">
                         <div className="footer-grid-column">
-                            <div className="footer-grid-heading">Products</div>
+                            <div className="footer-grid-heading">उत्पाद</div>
                             <ul className="footer-links-list">
-                                <li><a href="#" className="footer-link">Overview</a></li>
-                                <li><a href="#" className="footer-link">Solutions</a></li>
-                                <li><a href="#" className="footer-link">Pricing</a></li>
-                                <li><a href="#" className="footer-link">Customers</a></li>
+                                <li><a href="#" className="footer-link">अवलोकन</a></li>
+                                <li><a href="#" className="footer-link">समाधान</a></li>
+                                <li><a href="#" className="footer-link">मूल्य निर्धारण</a></li>
+                                <li><a href="#" className="footer-link">ग्राहक</a></li>
                             </ul>
                         </div>
                         <div className="footer-grid-column">
-                            <div className="footer-grid-heading">Company</div>
+                            <div className="footer-grid-heading">कंपनी</div>
                             <ul className="footer-links-list">
-                                <li><a href="#" className="footer-link">About</a></li>
-                                <li><a href="#" className="footer-link">Investor Relations</a></li>
-                                <li><a href="#" className="footer-link">Jobs</a></li>
-                                <li><a href="#" className="footer-link">Press</a></li>
-                                <li><a href="#" className="footer-link">Blog</a></li>
+                                <li><a href="#" className="footer-link">हमारे बारे में</a></li>
+                                <li><a href="#" className="footer-link">निवेशक संबंध</a></li>
+                                <li><a href="#" className="footer-link">नौकरियाँ</a></li>
+                                <li><a href="#" className="footer-link">प्रेस</a></li>
+                                <li><a href="#" className="footer-link">ब्लॉग</a></li>
                             </ul>
                         </div>
                         <div className="footer-grid-column">
-                            <div className="footer-grid-heading">Support</div>
+                            <div className="footer-grid-heading">सहायता</div>
                             <ul className="footer-links-list">
-                                <li><a href="#" className="footer-link">Contact</a></li>
-                                <li><a href="#" className="footer-link">Documentation</a></li>
-                                <li><a href="#" className="footer-link">Chat</a></li>
-                                <li><a href="#" className="footer-link">FAQ</a></li>
+                                <li><a href="#" className="footer-link">संपर्क करें</a></li>
+                                <li><a href="#" className="footer-link">दस्तावेज़ीकरण</a></li>
+                                <li><a href="#" className="footer-link">चैट</a></li>
+                                <li><a href="#" className="footer-link">अक्सर पूछे जाने वाले प्रश्न</a></li>
                             </ul>
                         </div>
                     </div>
-                </footer>
-                <div className="footer-copyright">
-                    © 2025 - काव्यधारा. All rights reserved.
-                </div>
+                </footer>     
+                    <div className="footer-copyright">
+                        © 2025 - काव्यधारा. सर्वाधिकार सुरक्षित।
+                    </div>
+                   
             </div>
         </>
     );
