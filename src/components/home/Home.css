@@ -11,6 +11,55 @@
 body{
     background-color: white;
 }
+
+.splash-screen {
+    position: fixed;
+    z-index: 50;
+    background-color: white;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Text Animation */
+  @keyframes fadeZoom {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+      letter-spacing: 0.2em;
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+      letter-spacing: 0.1em;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      letter-spacing: normal;
+    }
+  }
+  
+  .shlok-text {
+    font-size: 4rem; /* Tailwind's text-6xl equivalent */
+    font-weight: bold;
+    color: #1f2937;   /* Tailwind's gray-800 */
+    animation: fadeZoom 2s ease-out forwards;
+  }
+  
+  /* Fade Out Splash */
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  .hide-splash {
+    animation: fadeOut 1s ease forwards;
+  }
+
 .header-container{
   /* width: 100vw; */
   height: 40vh;
